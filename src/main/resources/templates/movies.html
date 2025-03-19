@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>HomePage</title>
+    <title>Best Movies Page</title>
   </head>
   <body>
     <header></header>
 
     <main>
-      <h1 th:text="|Best of the year by ${name}|"></h1>
+        <h1>Best Movies</h1>
+
+        <p th:text="${moviesTitles}"></p>
     </main>
   </body>
 </html>
