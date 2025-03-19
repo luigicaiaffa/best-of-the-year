@@ -36,6 +36,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{ " + id + "-" + title + " }";
+        return "Movie: " + title;
     }
 }

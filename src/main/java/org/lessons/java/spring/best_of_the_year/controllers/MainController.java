@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 @RequestMapping("/")
@@ -68,6 +69,24 @@ public class MainController {
 
         model.addAttribute("moviesTitles", moviesTitles);
         return "movies";
+    }
+
+    @GetMapping("/songs/{id}")
+    public String getSongByIdPage(Model model, @PathVariable("id") int id) {
+        Song[] songs = getBestSongs();
+        String song = songs[id].toString();
+
+        model.addAttribute("song", song);
+        return "songbyid";
+    }
+
+    @GetMapping("/movies/{id}")
+    public String getMoviesByIdPage(Model model, @PathVariable("id") int id) {
+        Movie[] movies = getBestMovies();
+        String movie = movies[id].toString();
+
+        model.addAttribute("movie", movie);
+        return "moviebyid";
     }
 
 }
