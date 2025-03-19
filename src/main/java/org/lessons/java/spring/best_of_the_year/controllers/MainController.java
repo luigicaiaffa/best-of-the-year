@@ -48,26 +48,16 @@ public class MainController {
     @GetMapping("/songs")
     public String getSongsPage(Model model) {
         Song[] songs = getBestSongs();
-        String songsTitles = "";
 
-        for (Song song : songs) {
-            songsTitles += song.getTitle() + ", ";
-        }
-
-        model.addAttribute("songsTitles", songsTitles);
+        model.addAttribute("songs", songs);
         return "songs";
     }
 
     @GetMapping("/movies")
     public String getMoviesPage(Model model) {
         Movie[] movies = getBestMovies();
-        String moviesTitles = "";
 
-        for (Movie movie : movies) {
-            moviesTitles += movie.getTitle() + ", ";
-        }
-
-        model.addAttribute("moviesTitles", moviesTitles);
+        model.addAttribute("movies", movies);
         return "movies";
     }
 

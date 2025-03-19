@@ -11,7 +11,9 @@
     <div class="container">
       <main>
         <h1>Best Movies</h1>
-        <p th:text="${moviesTitles}"></p>
+        <ul class="list-group">
+          <li class="list-group-item" th:each="movie : ${movies}" th:text="${movie.toString}"></li>
+        </ul>
       </main>
     </div>
   </body>

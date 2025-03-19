@@ -1,7 +1,7 @@
 package org.lessons.java.spring.best_of_the_year;
 
 public class Movie {
-    
+
     // # Variabili
     private int id;
     private String title;
@@ -36,6 +36,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie: " + title;
+        return id + " - " + title;
     }
 }
