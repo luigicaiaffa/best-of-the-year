@@ -2,14 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Best Songs Page</title>
+
+    <th:block th:replace="~{fragments :: styles}"></th:block>
   </head>
   <body>
-    <header></header>
+    <th:block th:replace="~{fragments :: header}"></th:block>
 
-    <main>
+    <div class="container">
+      <main>
         <h1>Best Songs</h1>
-
         <p th:text="${songsTitles}"></p>
-    </main>
+      </main>
+    </div>
   </body>
 </html>

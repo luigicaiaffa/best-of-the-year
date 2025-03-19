@@ -2,12 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>HomePage</title>
+
+    <th:block th:replace="~{fragments :: styles}"></th:block>
   </head>
   <body>
-    <header></header>
+    <th:block th:replace="~{fragments :: header}"></th:block>
 
-    <main>
-      <h1 th:text="|Best of the year by ${name}|"></h1>
-    </main>
+    <div class="container">
+      <main>
+        <h1 th:text="|Best of the year by ${name}|"></h1>
+      </main>
+    </div>
   </body>
 </html>
