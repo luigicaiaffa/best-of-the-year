@@ -10,8 +10,12 @@
 
     <div class="container">
       <main>
-        <h1 th:text="${movie}"></h1>
+        <div class="mt-5">
+          <th:block th:replace="~{fragments :: showCard(${movie})}"></th:block>
+        </div>
       </main>
     </div>
+
+    <th:block th:replace="~{fragments :: scrpits}"></th:block>
   </body>
 </html>

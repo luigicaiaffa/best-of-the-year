@@ -10,11 +10,13 @@
 
     <div class="container">
       <main>
-        <h1>Best Songs</h1>
-        <ul class="list-group">
-          <li class="list-group-item" th:each="song : ${songs}" th:text="${song.toString}"></li>
-        </ul>
+        <div class="text-center my-5">
+          <h1>Best Songs</h1>
+        </div>
+        <th:block th:replace="~{fragments :: list(${songs})}"></th:block>
       </main>
     </div>
+
+    <th:block th:replace="~{fragments :: scrpits}"></th:block>
   </body>
 </html>

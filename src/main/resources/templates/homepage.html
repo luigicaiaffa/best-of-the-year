@@ -10,8 +10,31 @@
 
     <div class="container">
       <main>
-        <h1 th:text="|Best of the year by ${name}|"></h1>
+        <div class="text-center my-5">
+          <h1 th:text="|Best of the year by ${name}|"></h1>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <div class="card" style="width: 35rem;">
+            <img
+            th:src="@{/img/placeholder.png}"
+            class="card-img-top"
+            alt="img"
+            />
+            <div class="card-body">
+              <p class="card-text text-center">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
+                accusantium quasi recusandae. In obcaecati tempora alias.
+                Blanditiis nihil corrupti quo exercitationem voluptatum
+                doloremque, nulla neque nesciunt culpa enim consequatur
+                architecto?
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
+
+    <th:block th:replace="~{fragments :: scrpits}"></th:block>
   </body>
 </html>
