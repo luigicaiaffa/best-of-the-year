@@ -13,7 +13,7 @@
         <div class="text-center my-5">
           <h1>Best Movies</h1>
         </div>
-        <th:block th:replace="~{fragments :: list(${movies})}"></th:block>
+        <th:block th:replace="~{fragments :: list(${movies}, ${type})}"></th:block>
       </main>
     </div>
 

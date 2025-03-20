@@ -13,7 +13,7 @@
         <div class="text-center my-5">
           <h1>Best Songs</h1>
         </div>
-        <th:block th:replace="~{fragments :: list(${songs})}"></th:block>
+        <th:block th:replace="~{fragments :: list(${songs}, ${type})}"></th:block>
       </main>
     </div>
 

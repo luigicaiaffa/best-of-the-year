@@ -40,8 +40,7 @@ public class MainController {
     }
     
     @GetMapping("/")
-    public String getHomePage(Model model, @RequestParam(name = "name") String name) {
-        model.addAttribute("name", name);
+    public String getHomePage() {
         return "homepage";
     }
 
@@ -50,6 +49,7 @@ public class MainController {
         Song[] songs = getBestSongs();
 
         model.addAttribute("songs", songs);
+        model.addAttribute("type", "songs");
         return "songs";
     }
 
@@ -58,6 +58,7 @@ public class MainController {
         Movie[] movies = getBestMovies();
 
         model.addAttribute("movies", movies);
+        model.addAttribute("type", "movies");
         return "movies";
     }
 

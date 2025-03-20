@@ -14,7 +14,7 @@
   <header th:fragment="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Best Of...</span>
+        <a th:href="@{/}" class="navbar-brand mb-0 h1">Best Of...</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,6 +32,7 @@
     </nav>
   </header>
 
+  <!-- # ShowCard -->
   <th:block th:fragment="showCard(element)"> 
     <div class="card">
       <div class="row g-0">
@@ -49,10 +50,12 @@
   </th:block>
 
   <!-- # List -->
-  <th:block th:fragment="list(list)">
+  <th:block th:fragment="list(list, type)">
     <div class="d-flex justify-content-center">
-      <ul class="list-group text-center">
-        <li class="list-group-item" th:each="item : ${list}" th:text="${item.toString}"></li>
+      <div class="list-group text-center">
+        <th:block th:each="item, iterStat : ${list}">
+          <a th:href="@{/{type}/{idx}(type=${type}, idx=${iterStat.index})}" class="list-group-item list-group-item-action" th:text="${item.toString()}"></a>
+        </th:block>
       </ul>
     </div>
   </th:block>
