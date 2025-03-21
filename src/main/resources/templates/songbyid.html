@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Song By Id</title>
+    
+    <th:block th:replace="~{fragments :: styles}"></th:block>
+  </head>
+  <body>
+    <th:block th:replace="~{fragments :: header}"></th:block>
+
+    <div class="container">
+      <main>
+        <div class="mt-5">
+          <th:block th:replace="~{fragments :: showCard(${song})}"></th:block>
+        </div>
+      </main>
+    </div>
+
+    <th:block th:replace="~{fragments :: scrpits}"></th:block>
+  </body>
+</html>

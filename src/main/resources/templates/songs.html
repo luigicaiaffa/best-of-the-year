@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Best Songs Page</title>
+
+    <th:block th:replace="~{fragments :: styles}"></th:block>
+  </head>
+  <body>
+    <th:block th:replace="~{fragments :: header}"></th:block>
+
+    <div class="container">
+      <main>
+        <div class="text-center my-5">
+          <h1>Best Songs</h1>
+        </div>
+
+        <th:block
+          th:replace="~{fragments :: list(${songs}, ${type})}"
+        ></th:block>
+      </main>
+    </div>
+
+    <th:block th:replace="~{fragments :: scrpits}"></th:block>
+  </body>
+</html>
